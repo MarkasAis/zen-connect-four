@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'castellar-regular';
+    src: url('../fonts/CASTELAR.ttf');
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 100%; }
+}
+
+@keyframes fade-out {
+    0% { opacity: 100%; }
+    100% { opacity: 0%; visibility: hidden; }
+}
+
+.fadeable {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    visibility: visible;
+}
+
+.fade-out {
+    animation-name: fade-out;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    visibility: visible;
+    pointer-events: none;
+}
+
+body, html {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    width: 170px;
+    height: 75px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: 'castellar-regular', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid white;
+
+    transition: background-color 0.2s,
+                color 0.2s,
+                transform 0.2s;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background-color: rgb(221, 221, 221);
+    color: black;
+    border-color: black;
+    transform: scale(1);
+}
+
+#footer {
+    position: relative;
+    height: 100px;
+    color: white;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+    padding-bottom: 30px;
+
+    font-size: 25px;
+}
+
+#logo {
+    font-family: 'castellar-regular', sans-serif;
+    font-size: 40px;
+    align-items: center;
+    display: inline-block;  
+    
+}
+
+#logo::before {
+    content: '';
+    background-image: url('../images/logo.png');
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#copyright {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    font-size: 20px;
+    transform: translateX(-50%);
+}
+
+#copyright::after {
+    margin-left: 5px;
+    content: '© 2022';
+}
+
+
+/* https://codepen.io/rsbear/pen/ZpXJVp */
+.close {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+}
+
+.close:hover {
+    background: none;
+}
+
+.close-lr {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .2s ease-in;
+}
+
+.close-rl {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .2s ease-in;
+}
+
+.close:hover .close-lr{
+    transform: rotate(-45deg);
+    background-color: tomato;
+}
+
+.close:hover .close-rl{
+    transform: rotate(45deg);
+    background-color: tomato;
+}
+
+@media (max-width: 1365px), (max-height: 767px) {
+    body::before {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        background-color: black;
+        color: white;
+        padding: 20px;
+        z-index: 100;
+
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 40px;
+        content: '⚠ Your window is too small (at least 1366x768px is expected) to play this game. Enlarge the browser window or zoom out to play.';
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Connect Four</title>
+
+    <link rel="stylesheet" href="stylesheets/splash.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="left-container">
+            <div id="buttons-container" class="fade-init">
+                <button id="play-button">Play</button>
+                <button id="rules-button">Read Rules</button>
+                <button id="stats-button">Statistics</button>
+            </div>
+
+            <div id="rules-container" class="fadeable">
+                <div id="rules">
+                    <div>Click on a column to drop a tile</div>
+                    <div>Connect 4 tiles in any direction to win</div>
+                    <div>Good luck & have fun!</div>
+                </div>
+            </div>
+
+            <div id="stats-container" class="fadeable">
+                <div id="stats">
+                    <div>
+                        <div>Games started:</div>
+                        <div>#</div>
+                    </div>
+                    <div>
+                        <div>Games ended by a win:</div>
+                        <div>#</div>
+                    </div>
+                    <div>
+                        <div>Games ended by a tie:</div>
+                        <div>#</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="close-button" class="close fadeable">
+                <div class="close-lr"></div>
+                <div class="close-rl"></div>
+            </button>
+        </div>
+        <div id="right-container">
+            <div id="right-background"></div>
+            <div id="right-content">
+                <div id="logo">Zen&#10;&#13;Connect&#10;&#13;Four</div>
+            </div>
+        </div>
+        <div id="copyright">Copyright</div>
+    </div>
+
+    <script type="module" src="js/menu.js"></script>
+</body>
+</html>
